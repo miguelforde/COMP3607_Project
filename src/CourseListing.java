@@ -1,3 +1,3 @@
 public interface CourseListing{ 
-    public void getAvailable(); 
+    public boolean getAvailable(Student student); 
 }//end CourseListing()

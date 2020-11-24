@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Courses implements CourseListing {
     private String courseCode;  
     private String title;
@@ -20,9 +23,22 @@ public class Courses implements CourseListing {
         this.qualityGrade = qualityGrade;
     }//end Courses()
 
-    public void getAvailable(){ 
+    public boolean getAvailable(Student student){   
+        ArrayList<Courses> studentCourses = student.getCompletedCourses(); 
+        Iterator iter = studentCourses.iterator(); 
+        
+        while (iter.hasNext()){ 
+            Courses temp = (Courses) iter.next();
+            if (temp == this.prerequisite){ 
+                return true; 
+            }//end if
+        }
+        return false;
+    }//end getAvailable() 
 
-    }//end getAvailable()
+    public String getCourseCode(){ 
+        return this.courseCode+" "+this.title;
+    }//end getCourseCode()
 
 
 }//end Courses()

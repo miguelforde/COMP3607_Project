@@ -10,11 +10,13 @@ public class Year2_CS_Elec {
         Courses comp1603 = new Courses("COMP 1603",3,null,"Computer Programming III"); 
         Courses comp2602 = new Courses("COMP 2602", 3, comp1600, "Computer Networks"); 
         Courses comp2605 = new Courses("COMP 2605", 3, comp1601, "Enterprise Database Systems");
-        Courses comp2606 = new Courses("COMP 2604", 3, comp1603, "Software Engineering"); 
+        Courses comp2606 = new Courses("COMP 2606", 3, comp1603, "Software Engineering I");  
+        Courses math2250 = new Courses("MATH 2250", 3, null, "Industrial Statistics");
 
         courses.add(comp2602); 
         courses.add(comp2605); 
-        courses.add(comp2606);      
+        courses.add(comp2606);       
+        courses.add(math2250);
 
         return courses;
     }//end

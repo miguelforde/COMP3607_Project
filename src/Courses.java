@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Courses implements CourseListing {
     private String courseCode;  
@@ -25,14 +24,18 @@ public class Courses implements CourseListing {
 
     public boolean getAvailable(Student student){   
         ArrayList<Courses> studentCourses = student.getCompletedCourses(); 
-        Iterator iter = studentCourses.iterator(); 
+
+ 
+        for(Courses obj: studentCourses){ 
+            //System.out.println(obj.getCourseCode());   
+            if ((this.prerequisite == null)  || (obj.getCourseCode().equals(this.getCourseCode()))) return false;
+        }//end  
+
+        for(Courses obj: studentCourses){ 
+            //System.out.println(obj.getCourseCode());   
+            if (obj.getCourseCode().equals(this.prerequisite.getCourseCode() ))  return true;
+        }//end  
         
-        while (iter.hasNext()){ 
-            Courses temp = (Courses) iter.next();
-            if (temp == this.prerequisite){ 
-                return true; 
-            }//end if
-        }
         return false;
     }//end getAvailable() 
 

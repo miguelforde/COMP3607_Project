@@ -14,7 +14,7 @@ public class StudentCS implements Student,Visitable{
         this.gpa = gpa; 
         
         this.registeredCourses = new ArrayList<Courses>(); 
-
+        this.completedCourses = new ArrayList<Courses>();
     }//end StudentCS() 
 
     public void register(Courses course){ 
@@ -29,7 +29,11 @@ public class StudentCS implements Student,Visitable{
 
     public ArrayList<Courses> getRegisteredCourses() {
         return this.registeredCourses;
-    }//end get()
+    }//end get() 
+
+    public void setCompletedCourses(Courses course){ 
+        this.completedCourses.add(course);
+    }//end
 
     public ArrayList<Courses> getCompletedCourses(){ 
         return this.completedCourses;

@@ -1,5 +1,7 @@
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {  
+        App_Frame.main(args);
+
         StudentCS stu =  new StudentCS("Mark", "BSc Chemistry", 2.67); 
         Courses comp1601 = new Courses("COMP 1601",3,null,"Computer Programming I"); 
         Courses comp1600 = new Courses("COMP 1600",3,null,"Introduction to Computing Concepts"); 

@@ -5,22 +5,9 @@ public class StudentVisitor implements Visitor {
     Department it = new Department(); 
 
     public StudentVisitor(){  
-        ArrayList<Courses> CSList = new ArrayList<Courses>(); 
-        CSList.addAll(new Year2_CS_Core().getList()); 
-        CSList.addAll(new Year2_CS_Elec().getList()); 
-        CSList.addAll(new Year3_CS().getList());  
-        CSList.addAll(new Year2_IT_Elec().getList());  
-        CSList.addAll(new Year3_IT().getList());
-        
+        ArrayList<Courses> CSList = new initCSDepartment().initDepartment(); 
+        ArrayList<Courses> ITList = new initCSDepartment().initDepartment();
         for(Courses obj: CSList) cs.addCourse(obj); 
-
-        ArrayList<Courses> ITList = new ArrayList<Courses>(); 
-        ITList.addAll(new Year2_IT_Core().getList()); 
-        ITList.addAll(new Year2_IT_Elec().getList()); 
-        ITList.addAll(new Year3_IT().getList());  
-        ITList.addAll(new Year2_CS_Elec().getList()); 
-        ITList.addAll(new Year3_CS().getList());
-        
         for(Courses obj: ITList) it.addCourse(obj);
     }//end  
 

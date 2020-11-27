@@ -27,6 +27,7 @@ public class Department implements CourseListing {
 
     public ArrayList<Courses> getCourses(){ 
         return this.departmentCourses;
-    }
+    }//end 
+
 
 }//end Department()

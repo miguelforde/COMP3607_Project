@@ -8,13 +8,13 @@ public class StudentCS implements Student,Visitable{
     private ArrayList<Courses> registeredCourses;  
     private double gpa; 
 
-    public StudentCS(String name,String major,double gpa){ 
+    public StudentCS(String name,String major,double gpa, ArrayList<Courses> courses){ 
         this.name = name; 
         this.major = major; 
         this.gpa = gpa; 
         
         this.registeredCourses = new ArrayList<Courses>(); 
-        this.completedCourses = new ArrayList<Courses>();
+        this.completedCourses = courses;
     }//end StudentCS() 
 
     public void register(Courses course){ 

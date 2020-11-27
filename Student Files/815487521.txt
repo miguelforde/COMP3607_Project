@@ -3,4 +3,8 @@ Biology
 Computer Science
 2.54
 COMP 2606 Software Engineering I
-COMP 2603 Object-Oriented Programming I
+COMP 2603 Object-Oriented Programming I 
+COMP 1602 Computer Programming II
+COMP 1603 Computer Programming III
+COMP 2611 Data Structures
+MATH 2250 Industrial Statistics

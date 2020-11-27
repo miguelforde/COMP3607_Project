@@ -33,7 +33,10 @@ public class Courses implements CourseListing {
 
         for(Courses obj: studentCourses){ 
             //System.out.println(obj.getCourseCode());   
-            if (obj.getCourseCode().equals(this.prerequisite.getCourseCode() ))  return true;
+            if (obj.getCourseCode().equals(this.prerequisite.getCourseCode() )){ 
+                
+                return true;
+            }  
         }//end  
         
         return false;

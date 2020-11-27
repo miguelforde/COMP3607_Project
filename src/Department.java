@@ -10,8 +10,9 @@ public class Department implements CourseListing {
     
     public boolean getAvailable(Student student){ 
         for(Courses obj : departmentCourses) {
-            if(obj.getAvailable(student) == true){ 
-                System.out.println(obj.getCourseCode());
+            if(obj.getAvailable(student) == true){  
+                student.setAvailableCourses(obj);
+                //System.out.println(obj.getCourseCode());
             }//end
         }//end
         return true;

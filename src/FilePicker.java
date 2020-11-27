@@ -45,6 +45,7 @@ public class FilePicker {
     }//end loadStudent()  
 
     public Student initStudent(ArrayList<String> studentInfo){  
+
         if (studentInfo.get(2).equals("Computer Science")){  
             StudentCS student = new StudentCS(studentInfo.get(0), studentInfo.get(1), Double.valueOf(studentInfo.get(3)), csComplete(studentInfo));
             return student;

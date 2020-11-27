@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -12,9 +13,10 @@ public class App_Frame extends Application {
     @Override
     public void start(Stage primaryStage) {  
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText("Import Transcript");
         VBox root = new VBox();
-        root.getChildren().add(btn);
+        root.getChildren().add(btn); 
+        root.setAlignment(Pos.TOP_CENTER);
 
     
         Scene scene = new Scene(root, 300, 250);
@@ -25,13 +27,15 @@ public class App_Frame extends Application {
             public void handle(ActionEvent event) {
                FilePicker fPicker = new FilePicker(primaryStage); 
                Student student = fPicker.readFile(); 
-               for(Courses obj: student.getCompletedCourses()) System.out.println(obj.getCourseCode());
-            }
+               //for(Courses obj: student.getCompletedCourses()) System.out.println(obj.getCourseCode());
+                
+               new CourseRecommedations().display(student);
+            }//end 
         });
 
 
 
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Returning Students Course Recommendations");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

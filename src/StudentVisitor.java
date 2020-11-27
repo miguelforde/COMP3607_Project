@@ -12,7 +12,7 @@ public class StudentVisitor implements Visitor {
     }//end  
 
     public void visit(StudentCS student){  
-       System.out.println(student.getCompletedCourses()); 
+       //System.out.println(student.getCompletedCourses()); 
        cs.getAvailable(student); 
     }//end visit()
 

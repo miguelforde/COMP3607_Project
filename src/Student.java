@@ -6,7 +6,8 @@ public interface Student {
     public ArrayList<Courses> getCompletedCourses(); 
     public String getName(); 
     public String getMajor(); 
-    public String getMinor(); 
-    public double getGpa(); 
-    public void setAvailableCourses(Courses course);
+    public String getMinor();   
+    public void accept(Visitor visitor);
+    public void setAvailableCourses(Courses course); 
+    public ArrayList<Courses> getAvailableCourses(); 
 }//end Student()

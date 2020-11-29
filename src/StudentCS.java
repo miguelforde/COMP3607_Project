@@ -7,20 +7,30 @@ public class StudentCS implements Student,Visitable{
     private ArrayList<Courses> completedCourses; 
     private ArrayList<Courses> registeredCourses;   
     private ArrayList<Courses> availableCourses;  
-    private double gpa; 
+    private int limit;  
+    private int registerCount = 0;
 
     public StudentCS(String name,String major,double gpa, ArrayList<Courses> courses){ 
         this.name = name; 
-        this.major = major; 
-        this.gpa = gpa; 
+        this.major = major;
         
         this.registeredCourses = new ArrayList<Courses>();  
         this.availableCourses = new ArrayList<Courses>(); 
-        this.completedCourses = courses;
+        this.completedCourses = courses; 
+
+        if(gpa < 2.00){ 
+            this.limit = 3; 
+        }else{ 
+            this.limit = 5;
+        }//end 
+
     }//end StudentCS() 
 
-    public void register(Courses course){ 
-
+    public void register(Courses course){  
+        if(registerCount < limit){ 
+            this.registeredCourses.add(course); 
+            this.registerCount++;
+        }//end
     }//end register()
 
 
@@ -63,14 +73,6 @@ public class StudentCS implements Student,Visitable{
 
     public void setMinor(String minor) {
         this.minor = minor;
-    }
-
-    public double getGpa() {
-        return gpa;
-    }
-
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
     }
 
     public ArrayList<Courses> getAvailableCourses() {
